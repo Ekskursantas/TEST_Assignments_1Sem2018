@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles#readme",
   "dependencies": {
     "escomplex": "^2.0.0-alpha",
-    "jsmeter": "^1.0.15"
+    "jsmeter": "^1.0.15",
+    "junit": "^1.4.9"
   }
 }

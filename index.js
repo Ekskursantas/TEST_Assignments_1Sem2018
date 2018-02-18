@@ -1,46 +1,47 @@
+let ctrl = {};
+
 //RETURN THE TYPE OF THE TRIANGLE, else INVALID
-function typeOfTriangle(x, y, z) {
-  if (check(x) == 'OK' && check(y) == 'OK' && check(z) == 'OK') {
+ctrl.typeOfTriangle = function(x, y, z) {
+  if (ctrl.check(x) == 'OK' && ctrl.check(y) == 'OK' && ctrl.check(z) == 'OK') {
     x = Number(x);
     y = Number(y);
     z = Number(z);
-    if(isValidSideLength(x,y,z)){
-      return getTriangle(x,y,z);
-    }else{
-      return 'INVALID SIDE LENGTH!';
+    if (ctrl.isValidSideLength(x, y, z)) {
+      return ctrl.getTriangle(x, y, z);
+    } else {
+      return 'invalid';
     }
   } else {
-    // let res = `invalid: [${x},${y},${z}]\n\n` + '1st: ' + check(x) + '\n2nd: ' + check(y) + '\n3rd: ' + check(z);
-    return 'INVALID';
+    return 'invalid';
   }
 }
 
 //CHECK IF INPUT IS VALID
-function check(num) {
+ctrl.check = function(num) {
   let stat = '';
   if (num != undefined) {
     num = Number(num);
     if (isNaN(num)) {
       stat += 'Not a Number! '
     }
-  }else{
+  } else {
     stat += 'Missing side length! '
   }
-  if(stat == ''){
+  if (stat == '') {
     return 'OK'
   }
   return stat;
 }
 
-function isValidSideLength(a,b,c){
-  if (a + b > c && a + c > b && b + c > a){
+ctrl.isValidSideLength = function(a, b, c) {
+  if (a + b > c && a + c > b && b + c > a) {
     return true;
-  }else{
+  } else {
     return false;
   }
 }
 
-function getTriangle(x,y,z){
+ctrl.getTriangle = function(x, y, z) {
   if (x == y && y == z) {
     return 'equilateral';
   } else if (x != y && y != z && x != z) {
@@ -53,10 +54,12 @@ function getTriangle(x,y,z){
 
 
 //MAIN:
-let input = process.argv;
-// console.log('INPUT: ' + input);
-let x = input[2];
-let y = input[3];
-let z = input[4];
-let res = typeOfTriangle(x, y, z);
-console.log('The triangle is ' + res);
+// let input = process.argv;
+// // console.log('INPUT: ' + input);
+// let x = input[2];
+// let y = input[3];
+// let z = input[4];
+// let res = ctrl.typeOfTriangle(x, y, z);
+// console.log('The triangle is ' + res);
+
+module.exports = ctrl;
