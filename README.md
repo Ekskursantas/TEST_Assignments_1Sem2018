@@ -17,19 +17,28 @@ _The program reads three integer values from an input dialog. The three values r
 |    6     |       1,0,2      |          invalid         | invalid : side length 0  |         passed           |
 |    7     |       1,2,3      |          invalid         | invalid : no triangle    |         passed           |
 
+
+![image](https://user-images.githubusercontent.com/16150075/36351204-af898678-14a6-11e8-8767-365416beab8a.png)
+
+
 :white_check_mark: Step 2: Design and implement the Triangle program in a programming language (e.g. Java or C#)
   - you don't have to write unit tests, but you may do so :)
   - No need for a nice GUI, just console app is fine
+  
+ #### Code Metrics - Cyclomatic complexity
+![image](https://user-images.githubusercontent.com/16150075/36351217-d630df1a-14a6-11e8-8e88-f382b2d7960a.png)
 
+##### _Solution:_ 
+In order to reduce CC, I created new functions that would separate the logic of getting the result of the type of the triangle. 
 
  #### SETUP:
  `git clone https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles.git` -> clone the project
 
  #### RUN:   
  `node index x y z` -> x, y and z represents the sides length of the triangle
+ `node test.js` -> run the tests
+ `node runjsmeter.js index.js`  -> check the code metrics
 
- :white_check_mark: Bring the code next time
-
- :white_check_mark: Have an IDE installed on your computer
-
- :white_check_mark: Read Black chap. 3
+ :white_check_mark: See the other exercises in _TEST_Assignment2_CJS.pdf_
+ 
+ 
