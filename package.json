@@ -1,0 +1,23 @@
+{
+  "name": "getstartedexercise",
+  "version": "1.0.0",
+  "description": "I. Design of test cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles/issues"
+  },
+  "homepage": "https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles#readme",
+  "dependencies": {
+    "escomplex": "^2.0.0-alpha",
+    "jsmeter": "^1.0.15"
+  }
+}
