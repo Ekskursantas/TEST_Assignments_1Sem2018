@@ -35,9 +35,9 @@ In order to reduce CC, I created new functions that would separate the logic of 
  `git clone https://github.com/cph-cs241/TEST_GetStartedExercise_Triangles.git` -> clone the project
 
  #### RUN:   
- `node index x y z` -> x, y and z represents the sides length of the triangle
- `node test.js` -> run the tests
- `node runjsmeter.js index.js`  -> check the code metrics
+ * `node index x y z` -> x, y and z represents the sides length of the triangle
+ * `node test.js` -> run the tests
+ * `node runjsmeter.js index.js`  -> check the code metrics
 
  :white_check_mark: See the other exercises in _TEST_Assignment2_CJS.pdf_
  
