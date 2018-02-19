@@ -14,7 +14,7 @@ import java.util.List;
  * @author Cherry Rose Semeña
  */
 public class Catalog {
-    private static List<Person> people = new ArrayList<>();
+    private List<Person> people = new ArrayList<>();
     
     public void addPerson (Person person){
         if(Calendar.getInstance().get(Calendar.YEAR)-person.getYearOfBirth()<18){

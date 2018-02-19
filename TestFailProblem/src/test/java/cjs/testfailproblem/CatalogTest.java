@@ -17,7 +17,7 @@ public class CatalogTest {
      */
     @Test (expected = IllegalArgumentException.class)
     public void testAddPerson() {
-        assertEquals(1, underTest.getNrOfPeople());
+        assertEquals(0, underTest.getNrOfPeople());
         Person p = new Person(2015);
         underTest.addPerson(p);
     }
