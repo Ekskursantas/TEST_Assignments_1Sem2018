@@ -41,4 +41,9 @@ In order to reduce CC, I created new functions that would separate the logic of 
 
  :white_check_mark: See the other exercises in _TEST_Assignment2_CJS.pdf_
  
+ ##### _CatalogTest Problem_
+ Test Cases order affects the declared static variable, designing independent test cases.
+ 
+ ![image](https://user-images.githubusercontent.com/16150075/36379306-59e4076a-157e-11e8-9a3d-9da2ea456c45.png)
+
  
