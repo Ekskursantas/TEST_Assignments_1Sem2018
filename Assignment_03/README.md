@@ -1,1 +1,1 @@
-### Assignment 3: Test Case exrcises
+### Assignment 3: Test Case Exercises
