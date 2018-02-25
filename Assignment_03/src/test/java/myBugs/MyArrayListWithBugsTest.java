@@ -80,22 +80,22 @@ public class MyArrayListWithBugsTest {
     }
     
     /**
-     * Test Case 07: Expanded list - Error Exception
+     * Test Case 07: Elements in the list - Error Exception
      */
     @Test (expected = IndexOutOfBoundsException.class) 
     public void T07_testGet02() {
-        System.out.println("Test Case 07: Expanded list - Error Exception (IndexOutOfBounds)");
+        System.out.println("Test Case 07: Elements in the list - Error Exception (IndexOutOfBounds)");
         instance = new MyArrayListWithBugs();
         instance.add("Element01");
         instance.get(-1);
     }
     
     /**
-     * Test Case 08: Expanded list - Error Exception
+     * Test Case 08: Elements in the list - Error Exception
      */
     @Test (expected = NullPointerException.class) 
     public void T08_testGet03() {
-        System.out.println(" Test Case 08: Expanded list - Error Exception (NullPonterException)");
+        System.out.println(" Test Case 08: Elements in the list - Error Exception (NullPonterException)");
         instance = new MyArrayListWithBugs();
         instance.add("Element01");
         instance.get(1);
