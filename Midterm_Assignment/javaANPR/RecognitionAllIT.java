@@ -27,13 +27,13 @@ import static org.junit.Assert.assertTrue;
 public class RecognitionAllIT {
 
     private Intelligence intel;
-    private String expected;
+    private String expectedPlate;
     private File file;
 
 
     public RecognitionAllIT(File file, String excpected) {
         this.file = file;
-        this.expected = excpected;
+        this.expectedPlate = excpected;
     }
 
     @Before
@@ -72,9 +72,9 @@ public class RecognitionAllIT {
     public void recogniseIt() throws IOException{
         CarSnapshot carSnap = new CarSnapshot(new FileInputStream(file));
         String read = intel.recognize(carSnap);
-        assertThat(carSnap, notNullValue());
-        assertThat(read, notNullValue());
-        assertThat(expected, is(read));
+        assertThat(carSnap, is(notNullValue()));
+        assertThat(read, is(notNullValue()));
+        assertThat(expectedPlate, is(read));
     }
 
 }
