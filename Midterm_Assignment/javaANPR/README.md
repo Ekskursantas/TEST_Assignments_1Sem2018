@@ -28,12 +28,14 @@ _The new test class could now report the images passed/failed which solve the pr
 ● The steps you took to include Hamcrest matchers in the project, and the difference they made for the test <br>
 >_Add depedency for using Hamcrest matchers in pom.xml:_<br>
 
-`<dependency>
+```
+<dependency>
     <groupId>org.hamcrest</groupId>
     <artifactId>hamcrest-library</artifactId>
     <version>1.3</version>
     <scope>test</scope>
-</dependency>`
+</dependency>
+```
 
 _Hamcrest is very useful in creating matcher objects which is often used in automated testing. It makes the tests easy to understand/read like: "Assert that expected plate is read" (last line in the image below)_
 
