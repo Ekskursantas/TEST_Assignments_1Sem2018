@@ -23,9 +23,15 @@ public class DateFormatterTest {
     }
 
     @Test
-    public void testGetFormattedDate() throws Exception {
-        String expected = "31 Mar 2018 11:08 PM";
-        assertThat(df.getFormattedDate("Europe/Copenhagen", new Date(2018 - 1900, 2, 31, 23, 8)), is(expected));
+    public void testGetFormattedDateCph() throws Exception {
+        String expectedCph = "31 Mar 2018 11:08 PM";
+        assertThat(df.getFormattedDate("Europe/Copenhagen", new Date(2018 - 1900, 2, 31, 23, 8)), is(expectedCph));
+    }
+    
+    @Test
+    public void testGetFormattedDateMnl() throws Exception {
+        String expectedMnl = "01 Apr 2018 05:08 AM"; //Philippiines is 6 hrs advance than Denmark ;)
+        assertThat(df.getFormattedDate("Asia/Manila", new Date(2018 - 1900, 2, 31, 23, 8)), is(expectedMnl));
     }
 
     @Test(expected = JokeException.class)
