@@ -51,10 +51,10 @@ public class JokeFetcherTest {
         when(ffMock.getAvailableTypes()).thenReturn(types);
         jokeFetcher = new JokeFetcher(dfMock, ffMock);
         
-        given(edu.getJoke()).willReturn(new Joke("This is an educational joke", "EducationalJokes.org"));
-        given(chuck.getJoke()).willReturn(new Joke("When Chuck Norris kicks a roundhouse...", "ChuckNorrisJokes.org"));
-        given(moma.getJoke()).willReturn(new Joke("Yo mama is so ugly...", "JoMamaJokes.org"));
-        given(tambal.getJoke()).willReturn(new Joke("Tambalaaa...", "TambalaJokes.org"));
+        given(edu.getJoke()).willReturn(new Joke("What is a math teacher’s favorite sum?SUMMER.", "EducationalJokes.org"));
+        given(chuck.getJoke()).willReturn(new Joke("Product Owners never ask Chuck Norris for more features. They ask for mercy.", "ChuckNorrisJokes.org"));
+        given(moma.getJoke()).willReturn(new Joke("Yo momma so fat when she went to the circus the little girl asked if she could ride the elephant", "JoMamaJokes.org"));
+        given(tambal.getJoke()).willReturn(new Joke("Tambal, ano daw?", "TambalaJokes.org"));
         
         
     }
@@ -76,13 +76,14 @@ public class JokeFetcherTest {
     @Test
     public void testGetJokesTimeZone() throws JokeException {
         given(dfMock.getFormattedDate(eq("Europe/Copenhagen"), anyObject())).willReturn("31 mar. 2018 11:08 PM");
-        assertThat(jokeFetcher.getJokes("EduJoke,ChuckNorris,ChuckNorris,Moma,Tambal", "Europe/Copenhagen").getTimeZoneString(), is("31 mar. 2018 11:08 PM"));
+        assertThat(jokeFetcher.getJokes("EduJoke,ChuckNorris,ChuckNorris,Moma,Tambal",
+                "Europe/Copenhagen").getTimeZoneString(), is("31 mar. 2018 11:08 PM"));
         verify(dfMock, times(1)).getFormattedDate(eq("Europe/Copenhagen"), anyObject());
     }
     
     @Test
     public void testEduJoke() throws JokeException {
-        String expectedJoke = "This is an educational joke";
+        String expectedJoke = "What is a math teacher’s favorite sum?SUMMER.";
         String expectedReference = "EducationalJokes.org";
         Jokes jokes = jokeFetcher.getJokes("EduJoke,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
         assertThat(jokes.getJokes().get(0).toString(), is(
@@ -92,7 +93,7 @@ public class JokeFetcherTest {
     
     @Test
     public void testChuckNorrisJoke() throws JokeException {
-        String expectedJoke = "When Chuck Norris kicks a roundhouse...";
+        String expectedJoke = "Product Owners never ask Chuck Norris for more features. They ask for mercy.";
         String expectedReference = "ChuckNorrisJokes.org";
         Jokes jokes = jokeFetcher.getJokes("EduJoke,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
         assertThat(jokes.getJokes().get(1).toString(), is(
@@ -102,7 +103,7 @@ public class JokeFetcherTest {
     
     @Test
     public void testMomaJoke() throws JokeException {
-        String expectedJoke = "Yo mama is so ugly...";
+        String expectedJoke = "Yo momma so fat when she went to the circus the little girl asked if she could ride the elephant";
         String expectedReference = "JoMamaJokes.org";
         Jokes jokes = jokeFetcher.getJokes("EduJoke,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
         assertThat(jokes.getJokes().get(2).toString(), is(
@@ -112,7 +113,7 @@ public class JokeFetcherTest {
     
      @Test
     public void testTambalJoke() throws JokeException {
-        String expectedJoke = "Tambalaaa...";
+        String expectedJoke = "Tambal, ano daw?";
         String expectedReference = "TambalaJokes.org";
         Jokes jokes = jokeFetcher.getJokes("EduJoke,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
         assertThat(jokes.getJokes().get(3).toString(), is(

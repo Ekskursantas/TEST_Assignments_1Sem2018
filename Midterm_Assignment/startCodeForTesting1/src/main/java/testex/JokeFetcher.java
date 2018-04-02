@@ -95,7 +95,7 @@ public class JokeFetcher {
      */
     public static void main(String[] args) throws JokeException {
         JokeFetcher jf = new JokeFetcher(new DateFormatter(), new FetcherFactory());
-        Jokes jokes = jf.getJokes("EduJoke,ChuckNorris,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
+        Jokes jokes = jf.getJokes("EduJoke,ChuckNorris,Moma,Tambal", "Europe/Copenhagen");
         jokes.getJokes().forEach((joke) -> {
             System.out.println(joke);
         });
